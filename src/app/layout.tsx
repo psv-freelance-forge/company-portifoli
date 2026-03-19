@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} antialiased`}>
-      <body className="flex flex-col">
+      <body className="flex flex-col bg-black text-silver font-sans selection:bg-orange/30 selection:text-white transition-colors duration-300">
         <SmoothScroll>
           <Navbar />
           {children}

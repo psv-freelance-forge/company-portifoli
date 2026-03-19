@@ -19,7 +19,7 @@ export default function Footer() {
                 href="mailto:hello@freelanceforge.com"
                 className="text-2xl sm:text-4xl md:text-5xl font-black text-white hover:text-orange transition-colors break-words"
               >
-                hello@freelanceforge.com
+               support@psvfreelanceforge.in
               </a>
               <div className="flex flex-wrap gap-x-8 gap-y-4 mt-6">
                 {["Twitter", "Instagram", "Dribbble", "GitHub"].map((s) => (
