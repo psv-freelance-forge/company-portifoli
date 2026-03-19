@@ -19,6 +19,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     lenisInstance = lenis;
     if (typeof window !== "undefined") {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (window as any).lenis = lenis;
     }
 

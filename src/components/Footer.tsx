@@ -3,19 +3,6 @@
 import Image from "next/image";
 
 export default function Footer() {
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string
-  ) => {
-    e.preventDefault();
-    const section = document.getElementById(id.toLowerCase());
-    if (section && (window as any).lenis) {
-      (window as any).lenis.scrollTo(section, { offset: -80 });
-    } else if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer id="contact" className="pt-24 md:pt-32 pb-12 md:pb-16 bg-zinc-950">
       <div className="container mx-auto px-6">
@@ -25,7 +12,7 @@ export default function Footer() {
               Ready to <br /> <span className="color-orange">Forge?</span>
             </h2>
             <p className="text-zinc-500 text-lg md:text-2xl font-light mb-8 md:mb-12 max-w-2xl">
-              Let's build something that matters. Reach out for a consultation.
+              Let&apos;s build something that matters. Reach out for a consultation.
             </p>
             <div className="flex flex-col gap-4">
               <a

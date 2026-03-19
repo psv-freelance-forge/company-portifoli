@@ -24,8 +24,10 @@ export default function Navbar() {
     e.preventDefault();
     setIsMenuOpen(false);
     const section = document.getElementById(id.toLowerCase());
-    if (section && (window as any).lenis) {
-      (window as any).lenis.scrollTo(section, { offset: -80 });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const windowAny = window as any;
+    if (section && windowAny.lenis) {
+      windowAny.lenis.scrollTo(section, { offset: -80 });
     } else if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }

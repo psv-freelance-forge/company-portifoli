@@ -14,7 +14,7 @@ export default function Services() {
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-tight">Elevating brands through robust tech.</h2>
           </div>
           <p className="text-zinc-500 text-base md:text-lg max-w-sm">
-            We don't just build websites; we create digital engines that drive growth and engagement.
+            We don&apos;t just build websites; we create digital engines that drive growth and engagement.
           </p>
         </div>
 

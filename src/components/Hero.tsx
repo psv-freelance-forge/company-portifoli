@@ -5,8 +5,10 @@ export default function Hero() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const section = document.getElementById(id.toLowerCase());
-    if (section && (window as any).lenis) {
-      (window as any).lenis.scrollTo(section, { offset: -80 });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const windowAny = window as any;
+    if (section && windowAny.lenis) {
+      windowAny.lenis.scrollTo(section, { offset: -80 });
     } else if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
@@ -62,7 +64,7 @@ export default function Hero() {
             onClick={(e) => handleNavClick(e, "contact")}
             className="px-8 py-3.5 rounded-2xl border border-zinc-700 bg-zinc-900/50 backdrop-blur-md text-white font-black text-base transition-all hover:bg-zinc-800 hover:border-zinc-500"
           >
-            Let's Talk
+            Let&apos;s Talk
           </a>
         </div>
       </div>

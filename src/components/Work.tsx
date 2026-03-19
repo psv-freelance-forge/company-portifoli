@@ -19,7 +19,7 @@ export default function Work() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center mb-16 md:mb-24 text-center">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 uppercase">Selected <span className="color-orange">Projects</span></h2>
-          <p className="text-zinc-500 text-base md:text-lg max-w-2xl font-medium">A glimpse into the digital futures we've helped create.</p>
+          <p className="text-zinc-500 text-base md:text-lg max-w-2xl font-medium">A glimpse into the digital futures we&apos;ve helped create.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
