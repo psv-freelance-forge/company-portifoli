@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const sharedMetadata: Metadata = {
-  title: "Next-Gen Digital Solutions for Modern Brands",
+  title: "PSV Freelance Forge",
   description:
     "Innovative digital solutions for modern brands. We specialize in cutting-edge web development, creative design, and strategic digital experiences.",
   icons: {
