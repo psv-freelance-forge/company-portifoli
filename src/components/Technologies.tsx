@@ -157,7 +157,7 @@ export default function Technologies() {
           <div className="relative z-10">
              <h4 className="text-zinc-500 font-black text-xs md:text-sm tracking-[0.5em] uppercase mb-8">Continuous Integration</h4>
              <p className="text-2xl md:text-4xl font-black text-white uppercase italic max-w-4xl mx-auto leading-relaxed">
-               "We constantly evolve our stack to integrate <span className="color-orange">emerging technologies</span> and ensure your solution stays ahead of the curve."
+               &quot;We constantly evolve our stack to integrate <span className="color-orange">emerging technologies</span> and ensure your solution stays ahead of the curve.&quot;
              </p>
           </div>
           {/* Background Pattern */}
