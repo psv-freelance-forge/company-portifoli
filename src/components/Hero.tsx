@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
        
         
-        <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tighter mb-10 text-white uppercase max-w-5xl animate-fade-in">
+        <h1 className="text-5xl md:text-7xl font-black leading-tight tracking-tighter text-white uppercase max-w-5xl animate-fade-in">
           We Forge <br />
           <span className="color-orange">Digital Excellence</span>
         </h1>
