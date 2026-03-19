@@ -46,7 +46,7 @@ export default function Navbar() {
           <div className="flex items-center group cursor-pointer">
             <div className="relative w-16 h-10 md:w-20 md:h-12 transition-all">
               <Image
-                src="/images/Main-logo.jfif"
+                src="/images/main-logo.jpg"
                 alt="Freelance Forge Logo"
                 fill
                 className="object-contain object-left group-hover:scale-105 transition-transform duration-500"
@@ -115,7 +115,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-2">
                     <div className="relative w-12 h-8">
                       <Image
-                        src="/images/Main-logo.jfif"
+                        src="/images/main-logo.jpg"
                         alt="Logo"
                         fill
                         className="object-contain"

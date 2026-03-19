@@ -78,7 +78,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-center md:text-left">
             <div className="relative w-24 h-10 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
               <Image
-                src="/images/Main-logo.jfif"
+                src="/images/main-logo.jpg"
                 alt="Freelance Forge Logo"
                 fill
                 className="object-contain"
