@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const sharedMetadata: Metadata = {
+  metadataBase: new URL("https://psv-freelance-forge.in"),
   title: "PSV Freelance Forge",
   description:
     "Innovative digital solutions for modern brands. We specialize in cutting-edge web development, creative design, and strategic digital experiences.",

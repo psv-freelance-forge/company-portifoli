@@ -15,6 +15,9 @@ const config: Config = {
         },
         silver: "#D1D5DB",   // Silverwhite
       },
+      fontFamily: {
+        sans: ["var(--font-roboto)", "sans-serif"],
+      },
     },
   },
   plugins: [],

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Work() {
   const steps = [
@@ -12,6 +13,11 @@ export default function Work() {
     { title: "Delivery", color: "bg-zinc-900 border border-orange/40 shadow-[0_10px_30px_-5px_#333]", textColor: "text-orange", desc: "Cloud hosting, Domain & SSL, CI/CD pipelines, Final Deployment" },
     { title: "Maintenance", color: "bg-orange shadow-[0_10px_30px_-5px_#FF8C0055]", textColor: "text-white", desc: "Continuous monitoring, Updates, Bug fixes, Support" },
   ];
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section id="work" className="py-24 md:py-32 overflow-x-hidden bg-black">
@@ -91,7 +97,7 @@ export default function Work() {
                 <div 
                   className="flex flex-col md:flex-row items-start"
                   style={{
-                    paddingLeft: typeof window !== 'undefined' && window.innerWidth > 768 ? `${idx * 10}%` : '0',
+                    paddingLeft: mounted && window.innerWidth > 768 ? `${idx * 10}%` : '0',
                   }}
                 >
                   <div className="group relative w-full md:w-[350px] lg:w-[450px]">

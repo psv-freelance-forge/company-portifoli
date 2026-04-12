@@ -12,6 +12,8 @@ export { sharedMetadata as metadata } from "@/lib/metadata";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
+import ChatBot from "@/components/ChatBot";
 
 export default function RootLayout({
   children,
@@ -26,6 +28,8 @@ export default function RootLayout({
           {children}
           <Footer />
         </SmoothScroll>
+        <CookieConsent />
+        <ChatBot />
       </body>
     </html>
   );

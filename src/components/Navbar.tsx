@@ -70,6 +70,8 @@ export default function Navbar() {
                 src="/images/main-logo.jpg"
                 alt="Freelance Forge Logo"
                 fill
+                priority
+                sizes="(max-width: 768px) 80px, 120px"
                 className="object-contain object-left group-hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -143,6 +145,7 @@ export default function Navbar() {
                         src="/images/main-logo.jpg"
                         alt="Logo"
                         fill
+                        sizes="48px"
                         className="object-contain"
                       />
                     </div>
@@ -159,6 +162,15 @@ export default function Navbar() {
                 </div>
 
                 <div className="flex flex-col gap-6">
+                  <Link
+                    href="/"
+                    onClick={(e) => handleNavClick(e, "/")}
+                    className={`text-lg font-bold transition-all ${
+                      pathname === "/" ? "text-orange" : "text-white"
+                    }`}
+                  >
+                    Home
+                  </Link>
                   {navLinks.map((item) => (
                     <Link
                       key={item.label}
