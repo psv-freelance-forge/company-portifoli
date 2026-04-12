@@ -44,7 +44,7 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group p-10 rounded-[2.5rem] bg-zinc-950/50 border border-zinc-900 backdrop-blur-sm transition-all duration-500 hover:border-orange/40 hover:bg-zinc-900/30 flex flex-col h-full"
+              className="group p-10 rounded-[2.5rem] bg-zinc-950/50 border border-zinc-900 backdrop-blur-sm transition-all duration-500 hover:border-orange hover:shadow-[0_0_30px_rgba(255,140,0,0.2)] hover:bg-zinc-900/30 flex flex-col h-full"
             >
               <div className="w-16 h-16 rounded-2xl bg-zinc-900 flex items-center justify-center text-4xl mb-8 border border-zinc-800 group-hover:border-orange/50 transition-colors shadow-inner grayscale group-hover:grayscale-0">
                 {service.icon}

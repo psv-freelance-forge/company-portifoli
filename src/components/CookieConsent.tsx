@@ -21,6 +21,16 @@ export default function CookieConsent() {
     setIsVisible(false);
   };
 
+  const handleDecline = () => {
+    localStorage.setItem("cookie-consent", "declined");
+    setIsVisible(false);
+  };
+
+  const handleAllowSome = () => {
+    localStorage.setItem("cookie-consent", "partial");
+    setIsVisible(false);
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -60,6 +70,20 @@ export default function CookieConsent() {
               >
                 Accept All
               </button>
+              <div className="flex gap-3">
+                <button
+                  onClick={handleAllowSome}
+                  className="flex-1 py-3 rounded-2xl bg-zinc-800 text-zinc-300 font-bold text-[10px] uppercase tracking-[0.1em] hover:bg-zinc-700 hover:text-white active:scale-[0.98] transition-all"
+                >
+                  Allow Some
+                </button>
+                <button
+                  onClick={handleDecline}
+                  className="flex-1 py-3 rounded-2xl border border-zinc-800 text-zinc-500 font-bold text-[10px] uppercase tracking-[0.1em] hover:bg-zinc-800 hover:text-white active:scale-[0.98] transition-all"
+                >
+                  Decline Cookies
+                </button>
+              </div>
               <Link
                 href="/privacy"
                 className="text-center text-zinc-600 hover:text-white font-bold text-[10px] uppercase tracking-widest py-2 transition-colors"

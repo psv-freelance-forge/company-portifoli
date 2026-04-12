@@ -1,9 +1,18 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import connectToDatabase from "@/lib/mongoose";
+import Contact from "@/models/Contact";
 
 export async function POST(req: Request) {
   try {
     const { name, email, project, message } = await req.json();
+
+    try {
+      await connectToDatabase();
+      await Contact.create({ name, email, project, message });
+    } catch (dbErr) {
+      console.error("MongoDB Save Error:", dbErr);
+    }
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -53,8 +62,29 @@ export async function POST(req: Request) {
           </div>
           <p>We look forward to forging something impactful together.</p>
           <div style="margin-top: 30px; padding: 20px; border-top: 2px solid #fdf2e9; background: #fafafa; border-radius: 8px;">
-            <p style="margin: 0 0 10px 0; font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">Copy of your message:</p>
-            <p style="margin: 0; font-style: italic; color: #444; font-size: 14px; white-space: pre-wrap;">${message}</p>
+            <p style="margin: 0 0 15px 0; font-size: 14px; color: #333; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">Your Form Data Summary:</p>
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px; color: #555; text-align: left;">
+              <tr>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea; width: 140px;"><strong>Sender (Your Email):</strong></td>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea;">${email}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea;"><strong>Recipient (Support):</strong></td>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea;">support@psvfreelanceforge.in</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea;"><strong>Name:</strong></td>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea;">${name}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea;"><strong>Project/Subject:</strong></td>
+                <td style="padding: 8px 0; border-bottom: 1px solid #eaeaea;">${project}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0 8px 0; vertical-align: top;"><strong>Message:</strong></td>
+                <td style="padding: 12px 0 8px 0; white-space: pre-wrap; font-style: italic;">${message}</td>
+              </tr>
+            </table>
           </div>
           <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;" />
           <p style="font-size: 12px; color: #999;">This is an automated response. Please do not reply directly to this email.</p>

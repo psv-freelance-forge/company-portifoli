@@ -61,7 +61,8 @@ export default function ChatBot() {
         method: "POST",
         body: JSON.stringify({ 
           text: `Quick Action: ${action.label}`,
-          url: window.location.href 
+          url: window.location.href,
+          sessionId: socket?.id
         })
       });
     } catch (e) { console.error(e); }
@@ -101,7 +102,8 @@ export default function ChatBot() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
           text: userText,
-          url: window.location.href 
+          url: window.location.href,
+          sessionId: socket?.id
         })
       });
       

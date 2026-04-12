@@ -13,7 +13,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
-import ChatBot from "@/components/ChatBot";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 export default function RootLayout({
   children,
@@ -24,12 +24,10 @@ export default function RootLayout({
     <html lang="en" className={`${roboto.variable} antialiased`}>
       <body className="flex flex-col bg-black text-silver font-sans selection:bg-orange/30 selection:text-white transition-colors duration-300">
         <SmoothScroll>
-          <Navbar />
-          {children}
-          <Footer />
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
         </SmoothScroll>
-        <CookieConsent />
-        <ChatBot />
       </body>
     </html>
   );
