@@ -19,22 +19,22 @@ dns.setDefaultResultOrder('ipv4first');
 
 async function connectToDatabase() {
   if (cached.conn) {
-    console.log("🟢 Reusing existing MongoDB connection.");
+    console.log("🟢 DB_DEBUG: Reusing existing MongoDB connection.");
     return cached.conn;
   }
 
   if (!cached.promise) {
-    console.log("⏳ Initializing new MongoDB connection...");
+    console.log("⏳ DB_DEBUG: Initializing new MongoDB connection process...");
     const opts = {
       bufferCommands: false,
       family: 4, 
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      console.log('✅ Successfully connected to MongoDB Database!');
+      console.log('✅ DB_DEBUG: Successfully connected to MongoDB Database!');
       return mongoose;
     }).catch(err => {
-      console.error('❌ MongoDB Connection Error:', err.message);
+      console.error('❌ DB_DEBUG: MongoDB Connection Error:', err.message);
       throw err;
     });
   }

@@ -10,7 +10,9 @@ import { io } from "socket.io-client";
 const socket = typeof window !== "undefined" ? io({
   reconnectionAttempts: 5,
   timeout: 10000,
-  transports: ["websocket", "polling"]
+  transports: ["polling", "websocket"],
+  path: "/socket.io",
+  addTrailingSlash: false
 }) : null;
 
 type Message = {
