@@ -11,8 +11,7 @@ const socket = typeof window !== "undefined" ? io({
   reconnectionAttempts: 5,
   timeout: 10000,
   transports: ["polling", "websocket"],
-  path: "/socket.io",
-  addTrailingSlash: false
+  path: "/socket.io/"
 }) : null;
 
 type Message = {

@@ -28,7 +28,8 @@ app.prepare().then(() => {
   // For simplicity in this demo, I'll use a dynamic import or assuming it works with next/babel
   const { Server } = require("socket.io");
   const io = new Server(server, {
-    cors: { origin: "*" }
+    cors: { origin: "*" },
+    path: "/socket.io/"
   });
 
   global.io = io; // Making it accessible globally for API routes
