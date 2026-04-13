@@ -7,7 +7,11 @@ import Link from "next/link";
 import { io } from "socket.io-client";
 
 // Initialize socket (assuming same host)
-const socket = typeof window !== "undefined" ? io() : null;
+const socket = typeof window !== "undefined" ? io({
+  reconnectionAttempts: 5,
+  timeout: 10000,
+  transports: ["websocket", "polling"]
+}) : null;
 
 type Message = {
   role: "user" | "bot" | "support";
