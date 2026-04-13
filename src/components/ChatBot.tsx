@@ -7,11 +7,12 @@ import Link from "next/link";
 import { io } from "socket.io-client";
 
 // Initialize socket (assuming same host)
-const socket = typeof window !== "undefined" ? io({
+const socket = typeof window !== "undefined" ? io(typeof window !== "undefined" ? window.location.origin : "", {
   reconnectionAttempts: 5,
   timeout: 10000,
   transports: ["polling", "websocket"],
-  path: "/socket.io/"
+  path: "/socket.io",
+  addTrailingSlash: false
 }) : null;
 
 type Message = {

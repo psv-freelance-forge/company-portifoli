@@ -7,6 +7,11 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   const server = createServer((req, res) => {
+    // CRITICAL: Prevent Next.js from handling Socket.IO requests
+    if (req.url && req.url.startsWith("/socket.io")) {
+      console.log(`[SOCKET_ROUTING_DEBUG] Bypassing Next.js for: ${req.url}`);
+      return; 
+    }
     handle(req, res);
   });
 
@@ -29,7 +34,8 @@ app.prepare().then(() => {
   const { Server } = require("socket.io");
   const io = new Server(server, {
     cors: { origin: "*" },
-    path: "/socket.io/"
+    path: "/socket.io",
+    addTrailingSlash: false
   });
 
   global.io = io; // Making it accessible globally for API routes
